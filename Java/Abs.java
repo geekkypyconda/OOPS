@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 
-class encap {
+class Abs {
     public static void main(String args[]){
         Person p1 = new Person("Axt",100);
         p1.speak(5);

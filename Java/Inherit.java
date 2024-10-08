@@ -13,7 +13,7 @@ class Inherit {
         Person p4 = new Akshat("makshat",90);
 
         p3.speak(2);
-        System.out.println();
+        System.out.println(p4.name]);
     }
 }
 
