@@ -4,70 +4,56 @@ import java.io.*;
 
 class Abs {
     public static void main(String args[]){
-        Person p1 = new Person("Axt",100);
-        p1.speak(5);
-        Person p2 = new Person("Pramod",100);
-        p2.speak(3);
+        Car c1 = new Car("Mercedez", "M5",100,5,4);
+        R8 r = new R8("Audi","R8",200,6,2);
+        Car c2 = new Car("Mercedez", "M7",1000,50,40);
 
-        // This is possible
-        Akshat p4 = new Akshat("makshat",90);
-        Person p5 = new Akshat("abcd",10);
-        System.out.println(p5.toMe);
-        System.out.println(p4.toMe);
-
+        c2.start(5);
+        r.start(10);
     }
 }
 
-class Person{
-    protected String name;
-    private int age;
-    private static int count = 0;
+abstract class Vehicle{
+    String brand,name;
+    int price;
 
-    Person(String name,int age){
+    Vehicle(String brand,String name,int price){
+        this.brand = brand;
         this.name = name;
-        this.age = age;
-        count++;
+        this.price = price;
     }
 
-    void printD(){
-        System.out.println("Name : " + name + ", age : " + age);
+    abstract void start(int n);
+}
+
+class Car extends Vehicle {
+    int length,doors;
+    Car(String brand,String name,int price,int len,int doors){
+        super(brand, name, price);
+        this.length = len;
+        this.doors = doors;
     }
 
-    void speak(int k){
-        while(k-- > 0){
-            System.out.println(name + " Speaking : " + k);
-        }
-
-        System.out.println();
-    }
-
-    static void getSet(){
-        System.out.println("hey");
-    }
-
-    String getName(){
-        return this.name;
-    }
-
-    int getAge(){
-        return this.age;
-    }
-
-    int getCount(){
-        return count;
+    @Override
+    void start(int n){
+        System.out.println(this.name + ",  started in : " + n + " , sec");
     }
 }
 
-class Akshat extends Person{
-    private int toMe;
+class Bike{
 
-    Akshat(String name, int age){
-        super(name,age);
-        toMe = 5;
-    }
+}
 
-    void fun(){
-        System.out.println(super.name);
+class Boat{
+
+}
+
+class R8 extends Car {
+    R8(String brand,String name,int price,int len,int doors){
+        super(brand, name,price,len, doors);
     }
 }
 
+class M7{
+
+}
