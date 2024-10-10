@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 
-class Abs {
+class Abs{
     public static void main(String args[]){
         Car c1 = new Car("Mercedez", "M5",100,5,4);
         R8 r = new R8("Audi","R8",200,6,2);
@@ -40,13 +40,7 @@ class Car extends Vehicle {
     }
 }
 
-class Bike{
 
-}
-
-class Boat{
-
-}
 
 class R8 extends Car {
     R8(String brand,String name,int price,int len,int doors){
@@ -54,6 +48,36 @@ class R8 extends Car {
     }
 }
 
-class M7{
 
+class NN implements Device, Person{
+    @Override
+    public void print(){
+        System.out.println("Device Print");
+    }
+
+    @Override
+    public void print(int n){
+        System.out.println("Person N Print");
+    }
+
+    @Override
+    public void devFunc(){
+        System.out.println("Dev Function");
+    }
+
+    @Override
+    public void personFunc(){
+        System.out.println("Person Function");
+    }
+}
+
+interface Device{
+    void print();
+    void devFunc();
+}
+
+
+interface Person{
+    void print(int n);
+    void personFunc();
 }
